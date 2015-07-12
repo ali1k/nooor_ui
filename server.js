@@ -66,8 +66,8 @@ server.use((req, res, next) => {
         res.end();
     });
 });
-
-const port = process.env.PORT || 3000;
+let args = process.argv.slice(2);
+const port = parseInt(args[0], 10) || 3000;
 console.log('Listening on port ' + port);
 server.listen(port)
 export default server;
